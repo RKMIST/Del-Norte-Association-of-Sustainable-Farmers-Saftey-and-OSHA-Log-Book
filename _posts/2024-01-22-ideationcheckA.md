@@ -61,6 +61,7 @@ Here's a very basic function that illustrates SHA-256 encryption being used.
         }
     }
 ```
+The login things discussed here will be used to make a leaderboard in which players can see who has produced the most crops, who has made the most sustainable farm (measured in eco points), and who has the most money.
 # Grid Layout for Game Map
 
 Example of the grid layout for the farm fields:
