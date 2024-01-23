@@ -1,8 +1,8 @@
 ---
 toc: true
 comments: false
+hide: false
 layout: post
-type: plan
 title: Ideation Check 2
 ---
 
@@ -105,12 +105,26 @@ The code is based on a 2d array abstracted by nested for loops as you can see be
 [Diagram ](https://docs.google.com/drawings/d/1SoLCICa7x4YviAG47N6djyN_XNhxIQS1QHPJHtAcLQc/edit)
 
 # Phaser.js Framework
+
 ### What is Phaser.js?
 Phaser is a Javascript framework that is the industry standard for 2D game programming. We will be utilizing the canvas feature to create our grid/game map, as illustrated by Ryan in the above sections. 
 
 ### Assets and JWT
-For the game to function properly, it is imperative that the assets are preloaded so that all assets 
+For the game to function properly, it is imperative that the assets are preloaded so that all assets display properly when being shown to the end user. For this, Phaser.Loader.LoaderPlugin must be used in order to preload the assets. This will be done by using this.load() within the Phaser scene. 
 
+In Phaser.js, a "scene" is a fundamental concept that represents a specific state or section of a game. Scenes are used to organize and separate different parts of your game, such as the main menu, gameplay, settings, and so on. Each scene can have its own logic, assets, and functionality.
+
+Here's some example JS code that shows what is being discussed:
+```
+preload() {
+    // 
+    this.load.image('avatar', 'https://example.com/avatar.png');
+    // sprites that Ryan will be designing.
+    this.load.spritesheet('player', 'path/to/player.png', { frameWidth: 32, frameHeight: 48 }); 
+    // Load other assets from URLs
+}
+```
+Using this methodology, we can make sure the game is ready to display all the sprites and the user has a smooth user experience.
 # Animation
 
 # Storing Data
