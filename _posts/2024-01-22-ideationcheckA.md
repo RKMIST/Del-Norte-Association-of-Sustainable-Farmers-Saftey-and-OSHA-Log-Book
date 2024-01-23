@@ -8,6 +8,8 @@ title: Ideation Check 2
 
 # Preface
 With our new project we will explore a 2d pixel art based game/simulation. Where we will allow the user to explore every aspect of sustainable agriculture from dealing with core principles of farm design to reduce erosion or water use, creating irrigation systems that reduce evaporation loss, the main principles of Integrated Pest Management. While understanding the outcomes of not following those principles like damage to local environments and ecology. All of this will focusing on the costs of these issues. Leveraging our team's passion for environmental issues, while also using the artistic skills from our chief asset designer Ryan. There will be elements were the user will be able to see and and choose which of these many avenues to venture down and understand what it is to be a farmer, and most importantly an ecologically conscious farmer.
+![image.png](https://github.com/RKMIST/RKMIST-DevLogs/blob/main/images/DelNorteCSA.png?raw=true)
+
 
 ## Research Methods and Information Sources
 
