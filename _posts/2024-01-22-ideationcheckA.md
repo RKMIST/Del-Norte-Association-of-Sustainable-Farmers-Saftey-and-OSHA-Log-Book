@@ -174,7 +174,7 @@ The code is based on a 2d array abstracted by nested for loops as you can see be
         drawGrid();
 ```
 
-[Diagram ](https://docs.google.com/drawings/d/1SoLCICa7x4YviAG47N6djyN_XNhxIQS1QHPJHtAcLQc/edit)
+[Diagram](https://docs.google.com/drawings/d/1SoLCICa7x4YviAG47N6djyN_XNhxIQS1QHPJHtAcLQc/edit)
 
 # Phaser.js Framework
 
