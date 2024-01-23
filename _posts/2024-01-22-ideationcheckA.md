@@ -17,7 +17,7 @@ Example of the Login page:
 
 Code for the login page implements thymeleaf in the javascript but is not functional yet because no backend code has been created yet.
 
-```
+```html
 <body>
     <h2>Login</h2>
     <form th:action="@{/login}" method="post">
@@ -35,7 +35,7 @@ Code for the login page implements thymeleaf in the javascript but is not functi
 We plan to use SHA-256 hash encryption along with proper CORS integration in order to safeguard servers and accounts from being attacked by malicious parties.
 
 Here's a very basic function that illustrates SHA-256 encryption being used. 
-```
+```java
  public static String hashPasswordSHA256(String password) {
         try {
             // Get SHA-256 MessageDigest instance. MessageDigest is a Java class which allows for seamless integration of cryptographic hash functions.
@@ -71,7 +71,7 @@ Example of the grid layout for the farm fields:
 
 The code is based on a 2d array abstracted by nested for loops as you can see below, in the full project this would be converted to a 3d array so that each tile can store its own data and easily be retrieved. The frontend will run using html canvas which is ideal for making 2d graphics.
 
-```
+```javascript
         let gridArray = [
             [0, 0, 0, 0],
             [1, 1, 0, 2],
@@ -146,7 +146,7 @@ Phaser is a Javascript framework that is the industry standard for 2D game progr
 For the game to function properly, it is imperative that the assets are preloaded so that all assets display properly when being shown to the end user. For this, Phaser.Loader.LoaderPlugin must be used in order to preload the assets. This will be done by using this.load() within the Phaser scene. 
 
 Here's some example JS code that shows what is being discussed:
-```
+```javascript
 preload() {
     // images :)
     this.load.image('avatar', 'https://example.com/avatar.png');
@@ -160,7 +160,7 @@ Using this methodology, we can make sure the game is ready to display all the sp
 In Phaser.js, a "scene" is a fundamental concept that represents a specific state or section of a game. Scenes are used to organize and separate different parts of your game, such as the main menu, gameplay, settings, and so on. Each scene can have its own logic, assets, and functionality. Think as scenes as "screens" in a sense. There needs to be various scenes for the menus and gameplay, and we're going to need to constantly swap between screens.
 
 Here is some example code showcasing this:
-```
+```javascript
 // Create instances of scenes
 const mainMenuScene = new MainMenuScene();
 const gameplayScene = new GameplayScene();
@@ -175,13 +175,13 @@ this.scene.start('GameplayScene')
 ```
 
 *** Data can be passed between scenes. *** This allows us to transfer data about the user and their save as they are navigating menus and playing the game. Data can be passed along to another scene as so, assume the code is a continuation of the code block above:
-```
+
+```javascript
 // Stop gameplay scene from above code block and switch data to the next scene
 this.scene.stop('GameplayScene');
 this.scene.start('NextScene', { score: 100 });
 
 ``` 
-
 ### Game Canvas
 Ryan has already gone over the grid, however in the final implementation of that idea, we will be using the Phaser framework's "canvas" functionality, which allows for a more robust way to create a 2d game environment.
 

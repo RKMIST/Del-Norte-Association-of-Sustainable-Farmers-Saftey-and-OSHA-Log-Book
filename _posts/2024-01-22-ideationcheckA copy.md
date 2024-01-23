@@ -125,9 +125,7 @@ For the game to function properly, it is imperative that the assets are preloade
 
 ## General Implementation
 - As the game is a single person farming simulation we don't need to maintain stores of information on the server side to handle the information regrading the game state.
-- The only data stored within the SQL on the backend will be general metrics about each player's stats to display on a leaderboard.
-    - This leaderboard will contain: 
- 
+- The only data stored within the SQL on the backend will be general metrics about each player's stats to display on a leaderboard as previously mentioned.
 - This allows us to move the database into the browser through the indexedDB property as our form of persistent game data storage.
 - With the asynchronous nature of the indexedDB we will need to use promises to handle the data retrieval and storage not interrupting the game loop.
 
