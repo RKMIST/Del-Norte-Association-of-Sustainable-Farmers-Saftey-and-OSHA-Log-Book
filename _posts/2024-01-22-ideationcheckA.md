@@ -11,6 +11,42 @@ With our new project we will explore a 2d pixel art based game/simulation. Where
 
 ## Research Methods and Information Sources
 
+**Scientific Journals** 
+- Crop Management and the best practices 
+- Enviormental Imapacts of farming methods 
+
+**Government Reports**
+- USDA: The United States Department of Agriculture, info on various parts of agriculture 
+- nvironmental Protection Agency (EPA): enviormental aspects of farming information, guidelines to minimize enviormental impact 
+
+**Agricultural Exension Services** 
+- Extension offices: local extension offices have information for farmers with real time reaserch, could prove useful to us. 
+
+**Academic Institutions** 
+- we can review reaserch conducted by agricultural departments in universities regarding crop managemnt technigques. 
+
+## Crop Management and Enviormental Impacts of Farming Methods 
+**Crop Management**
+- we will explore technology and sensors for precise crop managment 
+- crop rotations and mantaining soil fertility 
+- we will also analyze sustainable farming practices and their benefits and drawbacks 
+
+**Enviormental Impacts**
+- water and soil quality checks- we will explore the impact of farming practices on water and soil quality and display this information 
+- biodiversity conservation- we need to explore how each farming method contributes to or harms biodiversity to allow users to gain an accurate understanding of the affects of methods 
+
+## USDA Provides Subsides to Farmers to Get Them Paid 
+**USDA Programs** 
+- we will investigate the various subsidy programs offered by the USDA
+
+**Eligibility and Criteria** 
+- reaserch the eligibility criteria for farmers to receive subsidiesE
+- different types of crops and farming practices may qualify for specific subsidy programs.
+
+**Economic Impacts**
+- reaserch the economic impact of USDA subsidies on farmers and the agricultural industry
+
+
 # Login 
 
 Example of the Login page:
