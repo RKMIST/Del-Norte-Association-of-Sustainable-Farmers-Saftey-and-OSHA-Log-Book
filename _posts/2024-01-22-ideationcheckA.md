@@ -7,7 +7,7 @@ type: plan
 title: Ideation Check 2
 ---
 
-# Ryan
+# Login 
 
 Example of the Login page:
 
@@ -30,6 +30,7 @@ Code for the login page implements thymeleaf in the javascript but is not functi
 </body>
 ```
 
+# Grid Layout for Game Map
 
 Example of the grid layout for the farm fields:
 
@@ -102,15 +103,19 @@ The code is based on a 2d array abstracted by nested for loops as you can see be
         drawGrid();
 ```
 
-[Diagram ](https://docs.google.com/drawings/d/1SoLCICa7x4YviAG47N6djyN_XNhxIQS1QHPJHtAcLQc/edit) layout of project:
+[Diagram ](https://docs.google.com/drawings/d/1SoLCICa7x4YviAG47N6djyN_XNhxIQS1QHPJHtAcLQc/edit)
 
-![Untitled drawing (3)](https://github.com/RKMIST/RKMIST-DevLogs/assets/20897400/0e9de1f6-0152-4a85-94f8-ecdb50ee6cdb)
+# Phaser.js Framework
+### What is Phaser.js?
+Phaser is a Javascript framework that is the industry standard for 2D game programming. We will be utilizing the canvas feature to create our grid/game map, as illustrated by Ryan in the above sections. 
 
+### Assets and JWT
+For the game to function properly, it is imperative that the assets are preloaded so that all assets 
 
-# Haseeb
+# Animation
 
-# Sreeja
+# Storing Data
 
-# Tirith
+# Research Methods and Real World Sources
 
 
