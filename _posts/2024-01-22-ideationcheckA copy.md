@@ -125,7 +125,9 @@ For the game to function properly, it is imperative that the assets are preloade
 
 ## General Implementation
 - As the game is a single person farming simulation we don't need to maintain stores of information on the server side to handle the information regrading the game state.
-- The only data stored within the SQL on the backend will be general metrics about each player's stats possibly to display on a leaderboard. 
+- The only data stored within the SQL on the backend will be general metrics about each player's stats to display on a leaderboard.
+    - This leaderboard will contain: 
+ 
 - This allows us to move the database into the browser through the indexedDB property as our form of persistent game data storage.
 - With the asynchronous nature of the indexedDB we will need to use promises to handle the data retrieval and storage not interrupting the game loop.
 
@@ -163,6 +165,7 @@ request.addEventListener("upgradeneeded", (e) => {
   });
 
   // Define what data items the objectStore will contain this can be the attributes of the player's farm to reference later and build the game from 
+  // These values will be determined from the game selections from the game loop
   objectStore.createIndex("irrigationMethod", "drip", { unique: false });
   objectStore.createIndex("farmStyle", "terraced", { unique: false });
 
@@ -170,4 +173,31 @@ request.addEventListener("upgradeneeded", (e) => {
 });
 ```
 - In this demo we will have the database configured to store some basic farm info however we would also need to define some more additional content
+- We need to create a method to add our data to the database to add the new save states to the database
+
+```javascript
+// Define the addData() function to be able to write and simply add data to our database 
+// Allowing us to add the data simply and easily we can also create effects that will happen when there are updates
+function addData(e) {
+    e.preventDefault();
+    const newItem = { title: titleInput.value, body: bodyInput.value };
+    const transaction = db.transaction(["gamestate_os"], "readwrite");
+    const objectStore = transaction.objectStore("gamestate_os");
+    const addRequest = objectStore.add(newItem);
+
+    addRequest.addEventListener("success", () => {
+        Console.log("Data added to the database successfully");
+    });
+
+    transaction.addEventListener("complete", () => {
+        console.log("Transaction completed: database modification finished.");
+        displayData();
+    });
+
+    transaction.addEventListener("error", () =>
+        console.log("Transaction not opened due to error"),
+    );
+}
+```
+- This will allow us to create a more general methods to create the save state mechanics for the individual players. 
 
