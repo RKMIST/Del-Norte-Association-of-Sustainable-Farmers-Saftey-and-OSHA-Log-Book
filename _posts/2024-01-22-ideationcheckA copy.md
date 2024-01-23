@@ -142,12 +142,32 @@ const request = indexedDB.open('gameData', 1); // the 1 is the version number of
 // This will allow for operations that can occur if the db opens or doesn't open properly such as fall back methods we have yet to implement
 
 request.addEventListener('success', event => {
-    db = event.target.result; // this will set the db variable to the result of the request which is the content 
+    db = event.target.result; // this will set the db variable to the result of the request which is the contents of the database which we now can edit 
 });
 
 request.addEventListener('error', event => {
     console.log('Error opening database');
 });
-```
 
+
+
+// We will create an update event listener to handle adding elements to the database
+request.addEventListener("upgradeneeded", (e) => {
+  // Grab a reference to the opened database
+  db = e.target.result;
+
+  // Create an objectStore aka a table in our database to store notes and an auto-incrementing key
+  const objectStore = db.createObjectStore("gamestate_os", {
+    keyPath: "id",
+    autoIncrement: true,
+  });
+
+  // Define what data items the objectStore will contain this can be the attributes of the player's farm to reference later and build the game from 
+  objectStore.createIndex("irrigationMethod", "drip", { unique: false });
+  objectStore.createIndex("farmStyle", "terraced", { unique: false });
+
+  console.log("Database setup complete");
+});
+```
+- In this demo we will have the database configured to store some basic farm info however we would also need to define some more additional content
 
