@@ -197,5 +197,5 @@ function addData(e) {
     );
 }
 ```
-- This will allow us to create a more general methods to create the save state mechanics for the individual players. 
+- This will allow us to create a more general methods to create the save state mechanics for the individual players where they once upon closing the browser will still be able to play and continue to access their prior states. 
 
