@@ -6,6 +6,9 @@ layout: post
 title: Ideation Check 2
 ---
 
+# Preface
+
+
 # Login 
 
 Example of the Login page:
@@ -29,6 +32,35 @@ Code for the login page implements thymeleaf in the javascript but is not functi
 </body>
 ```
 
+We plan to use SHA-256 hash encryption along with proper CORS integration in order to safeguard servers and accounts from being attacked by malicious parties.
+
+Here's a very basic function that illustrates SHA-256 encryption being used. 
+```
+ public static String hashPasswordSHA256(String password) {
+        try {
+            // Get SHA-256 MessageDigest instance. MessageDigest is a Java class which allows for seamless integration of cryptographic hash functions.
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+
+            // Update the digest with the password bytes
+            md.update(password.getBytes());
+
+            // Complete the hash computation and obtain the final hash
+            byte[] sha256HashBytes = md.digest();
+
+            // Convert the byte array to a hexadecimal string
+            StringBuilder hexStringBuilder = new StringBuilder();
+            for (byte b : sha256HashBytes) {
+                hexStringBuilder.append(String.format("%02x", b));
+            }
+
+            return hexStringBuilder.toString();
+        } catch (NoSuchAlgorithmException e) {
+            // Handle NoSuchAlgorithmException (e.g., print an error message)
+            e.printStackTrace();
+            return null;
+        }
+    }
+```
 # Grid Layout for Game Map
 
 Example of the grid layout for the farm fields:
@@ -143,11 +175,16 @@ this.scene.start('GameplayScene')
 
 *** Data can be passed between scenes. *** This allows us to transfer data about the user and their save as they are navigating menus and playing the game. Data can be passed along to another scene as so, assume the code is a continuation of the code block above:
 ```
-// Stop gameplay scene and switch data to the next scene
+// Stop gameplay scene from above code block and switch data to the next scene
 this.scene.stop('GameplayScene');
 this.scene.start('NextScene', { score: 100 });
 
 ``` 
+
+### Game Canvas
+Ryan has already gone over the grid, however in the final implementation of that idea, we will be using the Phaser framework's "canvas" functionality, which allows for a more robust way to create a 2d game environment.
+
+
 
 # Animation
 
