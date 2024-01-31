@@ -1,0 +1,89 @@
+---
+layout: base
+permalink: /test/
+title: Test
+search_exclude: true
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Grid</title>
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gridCanvas" width="400" height="400"></canvas>
+
+    <script>
+        // Example 2D array (you can replace it with your own data)
+        let gridArray = [
+            [0, 0, 0, 0],
+            [1, 1, 0, 2],
+            [1, 1, 2, 2],
+            [1, 2, 2, 2],
+            [2, 2, 2, 2]
+        ];
+
+        // Canvas setup
+        const canvas = document.getElementById('gridCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Tile size
+        const tileSize = 50;
+
+        // Map array values to colors
+        const colorMap = {
+            0: 'red',
+            1: 'blue',
+            2: 'green'
+            // Add more colors as needed
+        };
+
+        // Draw grid based on the 2D array
+        function drawGrid() {
+            for (let row = 0; row < gridArray.length; row++) {
+                for (let col = 0; col < gridArray[row].length; col++) {
+                    const x = col * tileSize;
+                    const y = row * tileSize;
+
+                    // Get color based on array value
+                    const color = colorMap[gridArray[row][col]];
+
+                    // Set color
+                    ctx.fillStyle = color || 'black';
+
+                    // Draw rectangle
+                    ctx.fillRect(x, y, tileSize, tileSize);
+                }
+            }
+        }
+
+        // Function to handle mouse clicks
+        function handleClick(event) {
+            const mouseX = event.clientX - canvas.getBoundingClientRect().left;
+            const mouseY = event.clientY - canvas.getBoundingClientRect().top;
+
+            const clickedCol = Math.floor(mouseX / tileSize);
+            const clickedRow = Math.floor(mouseY / tileSize);
+
+            // Change the color of the clicked tile
+            if (gridArray[clickedRow] && gridArray[clickedRow][clickedCol] !== undefined) {
+                gridArray[clickedRow][clickedCol] = (gridArray[clickedRow][clickedCol] + 1) % Object.keys(colorMap).length;
+                drawGrid();
+            }
+        }
+
+        // Add click event listener to the canvas
+        canvas.addEventListener('click', handleClick);
+
+        // Call the drawGrid function to initially draw the grid
+        drawGrid();
+    </script>
+</body>
+</html>
