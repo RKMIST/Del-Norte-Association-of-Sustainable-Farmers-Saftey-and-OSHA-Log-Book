@@ -2,8 +2,8 @@ title: Nighthawk Community Supported Agriculture
 description: "Inspiring the Farmers of Tomorrow Today"
 owner_name: RKMIST
 github_username: RKMIST
-github_repo: "RKMIST-DevLogs"
-baseurl: "/RKMIST-DevLogs"
+github_repo: "Del-Norte-Association-of-Sustainable-Farmers-Saftey-and-OSHA-Log-Book"
+baseurl: "/Del-Norte-Association-of-Sustainable-Farmers-Saftey-and-OSHA-Log-Book"
 remote_theme: jekyll/minima
 minima:
   social_links:
